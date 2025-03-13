@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
 app.post("/submit", async (req, res) => {
   const { name, googleMeetUrl, language, geminiApiKey, debug, recordMeeting } =
     req.body;
+  console.log("🚀 >>>>>>>>>>>>>>>> req.body:", req.body);
 
   try {
     const client = new Notulen({
