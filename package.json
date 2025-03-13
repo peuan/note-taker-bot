@@ -9,10 +9,15 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc",
+    "build-ts": "tsc",
+    "build": "npm run clean && npm run build-ts",
     "example": "node --inspect -r ts-node/register examples/example.ts",
-    "deploy-build": "npm install && npm run build",
-    "start": "node --inspect -r ts-node/register server.ts"
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "watch-node": "nodemon dist/server.js",
+    "watch-ts": "tsc -w",
+    "dev": "npm run watch",
+    "build:production": "npm install --production=false && npm run build && npm ci",
+    "start": "NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.15.0",
@@ -29,6 +34,7 @@
     "typescript": "^5.5.3"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "ts-node": "^10.9.2"
   }
 }
