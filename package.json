@@ -1,5 +1,5 @@
 {
-  "name": "@tarikhagustia/notulen",
+  "name": "@peuan/ai-note-taker",
   "version": "1.4.3",
   "description": "A simple Google meet note taking app with AI transcription",
   "files": [
@@ -15,7 +15,7 @@
     "watch-ts": "tsc -w",
     "dev": "npm run watch",
     "build:production": "npm install --production=false && npm run build && npm ci",
-    "deploy-build": "npm install && npm run build && npx puppeteer browsers install chrome",
+    "deploy-build": "npm install && npm run build",
     "start": "node ./dist/server.js"
   },
   "dependencies": {
