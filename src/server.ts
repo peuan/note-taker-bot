@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static("public")); // Serve static files from the public directory
 app.use(morgan("combined")); // HTTP request logger
 
