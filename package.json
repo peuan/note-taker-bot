@@ -15,7 +15,7 @@
     "watch-ts": "tsc -w",
     "dev": "npm run watch",
     "build:production": "npm install --production=false && npm run build && npm ci",
-    "deploy-build": "npm install && npm run build",
+    "deploy-build": "npm install && npm run build && npx puppeteer browsers install chrome",
     "start": "node ./dist/server.js"
   },
   "dependencies": {
