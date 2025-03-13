@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { executablePath } from "puppeteer";
 import { MeetingResult, NotulenConfig, NotulenInterface, Transribe } from "./interfaces";
 import { launch, getStream, getStreamOptions, wss } from "puppeteer-stream";

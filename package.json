@@ -2,8 +2,6 @@
   "name": "@tarikhagustia/notulen",
   "version": "1.4.3",
   "description": "A simple Google meet note taking app with AI transcription",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
@@ -17,7 +15,8 @@
     "watch-ts": "tsc -w",
     "dev": "npm run watch",
     "build:production": "npm install --production=false && npm run build && npm ci",
-    "start": "NODE_ENV=production node dist/server.js"
+    "deploy-build": "npm install && npm run build",
+    "start": "node ./dist/server.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.15.0",
@@ -35,6 +34,8 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
     "ts-node": "^10.9.2"
   }
 }
