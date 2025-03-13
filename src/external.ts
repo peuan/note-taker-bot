@@ -15,7 +15,7 @@ export function whenSubtitleOn() {
     console.log("[Debug] Processing caption element:", captionElement.outerHTML);
 
     // Get the speaker name from the KcIKyf jxFHg class
-    const speakerElement = document.querySelector(".KcIKyf.jxFHg");
+    const speakerElement = document.querySelector(Selector.SPEAKER_NAME);
     const speakerName = speakerElement ? speakerElement.textContent?.trim() : "Unknown Speaker";
 
     // Get the speaker container for profile picture (if needed)

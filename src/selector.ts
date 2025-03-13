@@ -11,5 +11,6 @@ export enum Selector {
   MEETING_TITLE = ".u6vdEc.ouH3xe",
   MEET_KEEP_YOU_SAFE = "div[aria-label='Meet keeps you safe']",
   MEET_KEEP_YOU_SAFE_BUTTON = "button[jsname='EszDEe']",
-  KICKED = "h1[jsname='r4nke']"
+  KICKED = "h1[jsname='r4nke']",
+  SPEAKER_NAME = ".KcIKyf.jxFHg",
 }

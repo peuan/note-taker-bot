@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notulen Form</title>
+</head>
+<body>
+    <h1>Notulen Configuration</h1>
+    <form action="/submit" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="Peuan Note Taker" required><br><br>
+
+        <label for="googleMeetUrl">Google Meet URL:</label>
+        <input type="text" id="googleMeetUrl" name="googleMeetUrl" required><br><br>
+
+        <label for="language">Language:</label>
+        <input type="text" id="language" name="language" value="en-US" required><br><br>
+
+        <label for="geminiApiKey">Gemini API Key:</label>
+        <input type="text" id="geminiApiKey" name="geminiApiKey" value="AIzaSyCLgWEndtamiR7Dusgx9K-7OGEXcxG2QLY" value="AIzaSyCLgWEndtamiR7Dusgx9K-7OGEXcxG2QLY" required><br><br>
+
+        <label for="debug">Debug:</label>
+        <input type="checkbox" id="debug" name="debug"><br><br>
+
+        <label for="recordMeeting">Record Meeting:</label>
+        <input type="checkbox" id="recordMeeting" name="recordMeeting"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

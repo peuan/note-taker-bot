@@ -3,7 +3,7 @@ import { MeetingResult } from "../src/interfaces";
 
 async function main() {
   const client = new Notulen({
-    name: "First's Doppleganger",
+    name: "Peuan Note Taker",
     googleMeetUrl: "https://meet.google.com/bms-syxs-cdv",
     language: "en-US",
     geminiApiKey: "AIzaSyCLgWEndtamiR7Dusgx9K-7OGEXcxG2QLY",
