@@ -10,18 +10,23 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc",
-    "example": "node --inspect -r ts-node/register examples/example.ts"
+    "example": "node --inspect -r ts-node/register examples/example.ts",
+    "deploy-build": "npm install && npm run build",
+    "start": "node --inspect -r ts-node/register server.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.15.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "ffmpeg-static": "^5.2.0",
+    "morgan": "^1.10.0",
+    "pino": "^9.3.2",
+    "pino-pretty": "^11.2.2",
     "puppeteer": "^22.13.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "puppeteer-stream": "^3.0.15",
-    "typescript": "^5.5.3",
-    "pino": "^9.3.2",
-    "pino-pretty": "^11.2.2"
+    "typescript": "^5.5.3"
   },
   "devDependencies": {
     "ts-node": "^10.9.2"

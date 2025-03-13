@@ -1,12 +1,18 @@
 {
     "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
         "esModuleInterop": true,
-        "module": "commonjs",
-        "target": "es2019",
-        "declaration": true,
-        "outDir": "./dist"
+        "skipLibCheck": true
     },
     "include": [
         "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
     ]
 }
