@@ -50,6 +50,13 @@ app.post("/submit", async (req, res) => {
     });
 
     await client.listen();
+
+    client.on("end", (result) => {
+      console.log("Transribe:");
+      console.log(result.transribe);
+      console.log("Summary:");
+      console.log(result.summary);
+    });
     res.send("Notulen instance created and listening!");
   } catch (error) {
     console.error("Error creating Notulen instance:", error);
