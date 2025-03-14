@@ -7,5 +7,6 @@ export interface MeetingResult {
   googleMeetLink: string;
   recordingLocation: string;
   transribe: string;
-  summary: string;
+  transcript?: string;
+  summary?: string;
 }

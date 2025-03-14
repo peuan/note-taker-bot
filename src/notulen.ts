@@ -278,7 +278,7 @@ export class Notulen extends EventEmitter implements NotulenInterface {
           lastSpeaker
         );
         logger.info("--- Start of scripts ---");
-        logger.info(scripts);
+        logger.info("scripts:", scripts);
         logger.info("--- End of scripts ---");
         this.transcribe = scripts;
       });
@@ -379,29 +379,15 @@ export class Notulen extends EventEmitter implements NotulenInterface {
 
     // Convert the transribe to summary
     logger.info("--- Start of transribe ---");
-    logger.info(this.transcribe);
+    logger.info("transribe:", this.transcribe);
     logger.info("--- End of transribe ---");
     const transcribe = transribeToText(this.transcribe);
 
-    // summary the meeting
-    const fullPrompt = `${this.config.prompt} ${transcribe}`;
-
-    // Access your API key as an environment variable (see "Set up your API key" above)
-    const genAI = new GoogleGenerativeAI(this.config.geminiApiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-    const result = await model.generateContent(fullPrompt);
-    logger.info("--- Start of full prompt ---");
-    logger.info(fullPrompt);
-    logger.info("--- End of full prompt ---");
-    const response = await result.response;
-    const text = response.text();
     const meetingResult: MeetingResult = {
       title: this.meetingTitle,
       googleMeetLink: this.config.googleMeetUrl,
       recordingLocation: this.videoOutput,
-      transribe: transcribe,
-      summary: text
+      transribe: this.transcribe,
     };
 
     await this.browser.close();
